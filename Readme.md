@@ -30,7 +30,7 @@
   * Use Windows' default console window
   * 'git pull' behavior - Default (fast-forward)
   * credentials helper - None
-  * extra options - Enable symnolic links
+  * extra options - Enable symbolic links [see note below]
   * experimental options - up to you - Install -- Finish
   * open "Bash prompt"
     * `git config --global core.symlinks true`
@@ -49,6 +49,11 @@ git config --global core.compression 0
 ```
 https://stackoverflow.com/questions/21277806/fatal-early-eof-fatal-index-pack-failed
 
-
 This error may occur for memory needs of git.
 
+On symlink "support"
+
+* `git config --global core.symlinks true` (or btter yet at repository level) is unavoidable at least in the original installer's
+  session (no idea if it has any effect on the 'Default User profile')
+* Git Bash ``ln [-s]` doesn't make a [sym]link, it just makes a copy of file
+* Windows way of making symlink is `mklink Dst Src` (see [mklink](https://ss64.com/nt/mklink.html))
