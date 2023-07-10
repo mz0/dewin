@@ -53,7 +53,8 @@ This error may occur for memory needs of git.
 
 On symlink "support"
 
-* `git config --global core.symlinks true` (or btter yet at repository level) is unavoidable at least in the original installer's
+* `git config --global core.symlinks true` (or better yet at repository level) is unavoidable at least in the original installer's
   session (no idea if it has any effect on the 'Default User profile')
+  `git clone -c core.symlinks=true ...` is also an option for initial repo cloning
 * Git Bash ``ln [-s]` doesn't make a [sym]link, it just makes a copy of file
 * Windows way of making symlink is `mklink Dst Src` (see [mklink](https://ss64.com/nt/mklink.html))
