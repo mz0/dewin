@@ -57,4 +57,6 @@ On symlink "support"
   session (no idea if it has any effect on the 'Default User profile')
   `git clone -c core.symlinks=true ...` is also an option for initial repo cloning
 * Git Bash ``ln [-s]` doesn't make a [sym]link, it just makes a copy of file
-* Windows way of making symlink is `mklink Dst Src` (see [mklink](https://ss64.com/nt/mklink.html))
+* Windows way of making symlink is (in CMD.EXE only) `mklink Dst Src` (see [mklink](https://ss64.com/nt/mklink.html))
+  Note: `MKLINK` is a CMD.EXE built-in, not and executable
+* in PowerShell use `New-Item -Path <to> -ItemType SymbolicLink -Value <from>` to the same effect
