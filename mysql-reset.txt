@@ -1,0 +1,12 @@
+https://dev.mysql.com/doc/mysql-windows-excerpt/5.7/en/resetting-permissions-windows.html
+
+MySQL>
+cd 8.0
+
+MySQL\8.0>
+copy con mysql-reset.txt
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'myExtrardinaryC0mplexPassword';
+^Z
+
+MySQL\8.0>
+bin\mysqld.exe --init-file=mysql-reset.txt

@@ -1,6 +1,6 @@
 * Microsoft Windows 11 Pro 22H2 (22621.1848)
 * ssh-keygen -t ed25519 -C 'mz@pug'
-  * PS C:\Users\mz0> type C:\Users\mz0/.ssh/id_ed25519.pub
+  * type %HOMEDRIVE%%HOMEPATH%\.ssh\id_ed25519.pub
     ```
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA3MKStmrL917EbmLfM52LnmRiAmF5uhlYh7NAXvjRId mz@pug
     ```
@@ -11,7 +11,7 @@
   * "Computer Management" - "Local Users and Groups" - "Groups" - New Group
     * Group name: developer (Description: can make symlinks)
     * add your account to this group (e.g. for Microsoft account mz0@outlook.com type mz0 and "Check Names")
-  * "Local Security Policy" - "Run as Administrator"
+  * "Local Security Policy" - "Run as administrator"
     * Local Policies-> User Rights Assignment -> Create symbolic links (initially has only "Administrators" built-in group)
     * Add User or Group (Object Types - check 'Groups') - "developer" - "Check Names"
 
@@ -58,5 +58,5 @@ On symlink "support"
   `git clone -c core.symlinks=true ...` is also an option for initial repo cloning
 * Git Bash ``ln [-s]` doesn't make a [sym]link, it just makes a copy of file
 * Windows way of making symlink is (in CMD.EXE only) `mklink Dst Src` (see [mklink](https://ss64.com/nt/mklink.html))
-  Note: `MKLINK` is a CMD.EXE built-in, not and executable
+  Note: `MKLINK` is a CMD.EXE built-in, not an executable
 * in PowerShell use `New-Item -Path <to> -ItemType SymbolicLink -Value <from>` to the same effect
