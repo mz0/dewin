@@ -4,16 +4,17 @@
     ```
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA3MKStmrL917EbmLfM52LnmRiAmF5uhlYh7NAXvjRId mz@pug
     ```
-  * [Exactpro Gitlab](https://gitlab.exactpro.com/-/profile/keys) / [Github](https://github.com/settings/keys)
+  * [Example Gitlab](https://gitlab.example.com/-/profile/keys) / [Github](https://github.com/settings/keys)
     (Gitlab - remove "Expiration date")
 
 * enable symlinks
-  * "Computer Management" - "Local Users and Groups" - "Groups" - New Group
+  * "Computer Management" - "Local Users and Groups" - "Groups" - New Group (or Run `lusrmgr.msc`)
     * Group name: developer (Description: can make symlinks)
     * add your account to this group (e.g. for Microsoft account mz0@outlook.com type mz0 and "Check Names")
-  * "Local Security Policy" - "Run as administrator"
+  * [Pro/Enterprise] "Local Security Policy" - "Run as administrator"
     * Local Policies-> User Rights Assignment -> Create symbolic links (initially has only "Administrators" built-in group)
     * Add User or Group (Object Types - check 'Groups') - "developer" - "Check Names"
+  * [Home] TODO check [Polsedit or PowerShell recipe](https://superuser.com/questions/782298/how-do-i-grant-myself-permission-to-make-symbolic-links-on-windows-8-1)
 
 * `winget install --interactive Git.Git`
   * UAC confirmation
