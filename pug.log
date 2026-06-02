@@ -1,0 +1,101 @@
+## 2024-12-28 03:20:10 +0400 ##
+compmgmt.msc > 
+developer
+##############
+
+## 2026-06-02 12:24:42 +0400 ##
+1. Uninstall "Podman Desktop"
+2. PS (Administrator)>  ### github.com/raphire/win11debloat ###
+   & ([scriptblock]::Create((irm "https://debloat.raphi.re/")))
+3. winget upgrade
+winget upgrade
+Name                                             Id                                Version        Available      Source
+-----------------------------------------------------------------------------------------------------------------------
+Git                                              Git.Git                           2.47.1         2.54.0         winget
+Podman                                           RedHat.Podman                     5.3.1          5.8.2          winget
+Google Chrome                                    Google.Chrome.EXE                 148.0.7778.168 148.0.7778.217 winget
+Microsoft Visual C++ 2013 Redistributable (x64)… Microsoft.VCRedist.2013.x64       12.0.30501.0   12.0.40664.0   winget
+Microsoft Visual C++ 2015-2022 Redistributable … Microsoft.VCRedist.2015+.x86      14.44.35211.0  14.51.36231.0  winget
+Microsoft .NET Core Runtime - 3.1.28 (x64)       Microsoft.DotNet.Runtime.3_1      3.1.28         3.1.32         winget
+Microsoft .NET Runtime - 8.0.14 (x64)            Microsoft.DotNet.Runtime.8        8.0.14         8.0.27         winget
+Microsoft ASP.NET Core 8.0.14 - Shared Framewor… Microsoft.DotNet.AspNetCore.8     8.0.14         8.0.27         winget
+Microsoft Visual C++ 2015-2022 Redistributable … Microsoft.VCRedist.2015+.x64      14.44.35211.0  14.51.36231.0  winget
+Microsoft Visual C++ 2013 Redistributable (x86)… Microsoft.VCRedist.2013.x86       12.0.30501.0   12.0.40664.0   winget
+Microsoft Windows Desktop Runtime - 8.0.14 (x86) Microsoft.DotNet.DesktopRuntime.8 8.0.14         8.0.27         winget
+Windows Subsystem for Linux                      Microsoft.WSL                     2.3.26.0       2.7.3          winget
+
+12 upgrades available.
+
+podman machine list  ## <<
+NAME                    VM TYPE CREATED        LAST UP  CPUS  MEMORY  DISK SIZE
+podman-machine-default  wsl     17 months ago  Never    2     2 GiB    100 GiB
+
+podman machine stop  ## <<
+Machine "podman-machine-default" stopped successfully
+
+podman machine rm    ## <<
+The following files will be deleted:
+
+C:\Users\mz\.config\containers\podman\machine\wsl\podman-machine-default.json
+C:\Users\mz\AppData\Local\Temp\podman\podman-machine-default.sock
+C:\Users\mz\AppData\Local\Temp\podman\podman-machine-default-gvproxy.sock
+C:\Users\mz\AppData\Local\Temp\podman\podman-machine-default-api.sock
+C:\Users\mz\AppData\Local\Temp\podman\podman-machine-default.log
+
+Unregistering.
+The operation completed successfully.
+
+rm -rf $LOCALAPPDATA/podman-desktop-updater
+
+winget uninstall RedHat.Podman
+
+winget upgrade Microsoft.WSL
+Found Windows Subsystem for Linux Version 2.7.3
+Download github.com/microsoft/WSL/releases/download/2.7.3/wsl.2.7.3.0.x64.msi
+243 MB OK ...Successfully installed
+Notes: If the virtual machine platform Windows optional feature was enabled,
+a restart is required for WSL to function properly.
+
+winget upgrade Microsoft.VCRedist.2015+.x64
+Found Microsoft Visual C++ 2015-2022 Redistributable (x64) Version 14.51.36231.0
+download VC_redist.x64.exe
+17.9 MB OK ...Successfully installed
+
+winget upgrade Microsoft.VCRedist.2013.x86
+Found Microsoft Visual C++ 2013 Redistributable (x86) Version 12.0.40664.0
+download.visualstudio.microsoft.com/download/pr/10912113/../vcredist_x86.exe
+6.20 MB OK Successfully uninstalled...Successfully installed
+
+winget upgrade Microsoft.DotNet.Runtime.8
+Found Microsoft .NET Runtime 8.0 Version 8.0.27
+27.2 MB OK ...Successfully installed
+
+winget upgrade Microsoft.DotNet.DesktopRuntime.8
+Found Microsoft .NET Windows Desktop Runtime 8.0 Version 8.0.27
+Download windowsdesktop-runtime-8.0.27-win-x64.exe
+55.6 MB OK ...Successfully installed
+
+winget upgrade Microsoft.DotNet.AspNetCore.8
+Found Microsoft ASP.NET Core Runtime 8.0 Version 8.0.27
+Download aspnetcore-runtime-8.0.27-win-x64.exe
+10.0 MB OK ...Successfully installed
+
+winget upgrade Microsoft.DotNet.Runtime.3_1
+Found Microsoft .NET Runtime 3.1 Version 3.1.32
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Download: builds.dotnet.microsoft.com/dotnet/Runtime/3.1.32/dotnet-runtime-3.1.32-win-x64.exe
+25.0 MB OK ...Successfully installed
+
+winget upgrade Git.Git
+Found Git Version 2.54.0
+Download github.com/git-for-windows/git/releases/download/v2.54.0.windows.1/Git-2.54.0-64-bit.exe
+62.1 MB OK ...Successfully installed
+
+winget upgrade
+Name                                                    Id                           Version       Available     Source
+-----------------------------------------------------------------------------------------------------------------------
+Microsoft Visual C++ 2013 Redistributable (x64) - 12.0… Microsoft.VCRedist.2013.x64  12.0.30501.0  12.0.40664.0  winget
+Microsoft Visual C++ 2015-2022 Redistributable (x86) -… Microsoft.VCRedist.2015+.x86 14.44.35211.0 14.51.36231.0 winget
+2 upgrades available.
+### 2026-06-02 13:23:32 +0400 #########################################################################################
