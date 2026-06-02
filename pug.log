@@ -103,3 +103,24 @@ Download github.com/git-for-windows/git/releases/download/v2.54.0.windows.1/Git-
 62.1 MB OK ...Successfully installed
 
 ### 2026-06-02 13:58:58 +0400 #########################################################################################
+
+winget install OpenVPNTechnologies.OpenVPNConnect
+Found OpenVPN Connect Version 3.8.0
+Download packages.openvpn.net/connect/v3/openvpn-connect-3.8.0.4528_signed.msi
+110 MB OK ...Successfully installed
+
+PS-5.1(Administrator)>
+$PSVersionTable.PSVersion.ToString()  # 5.1.26100.8457
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*'
+# Name  : OpenSSH.Server~~~~0.0.1.0
+# State : NotPresent
+
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+
+### Windows force-reset (see Pug-WindowsPM)
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*'
+# Name  : OpenSSH.Server~~~~0.0.1.0
+# State : Installed
+
+Start-Service sshd
+Set-Service -Name sshd -StartupType 'Automatic'
