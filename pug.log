@@ -124,3 +124,29 @@ Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*'
 
 Start-Service sshd
 Set-Service -Name sshd -StartupType 'Automatic'
+
+### 2026-06-03
+winget install Microsoft.VisualStudioCode
+Found Microsoft Visual Studio Code Version 1.122.1
+vscode.download.prss.microsoft.com/dbazure/download/stable/../VSCodeUserSetup-x64-1.122.1.exe
+168 MB OK ...Successfully installed
+
+winget show JetBrains.IntelliJIDEA --versions
+Found IntelliJ IDEA [JetBrains.IntelliJIDEA]
+Version
+----------
+2026.1.2
+2026.1.1
+2026.1
+2025.3.4
+...
+
+winget install JetBrains.IntelliJIDEA
+Found IntelliJ IDEA Version 2026.1.2
+download.jetbrains.com/idea/idea-2026.1.2.exe
+1.08 GB OK...Successfully installed
+
+winget upgrade
+Name            Id              Version Available Source
+--------------------------------------------------------
+Python Launcher Python.Launcher 3.12.10 3.13.5    winget
