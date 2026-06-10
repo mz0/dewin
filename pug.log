@@ -109,6 +109,9 @@ Found OpenVPN Connect Version 3.8.0
 Download packages.openvpn.net/connect/v3/openvpn-connect-3.8.0.4528_signed.msi
 110 MB OK ...Successfully installed
 
+Import existing "$APPDATA/OpenVPN Connect/profiles/"<nuneric-string>.ovpn
+(APPDATA=$USERPROFILE/AppData/Roaming)
+
 PS-5.1(Administrator)>
 $PSVersionTable.PSVersion.ToString()  # 5.1.26100.8457
 Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*'
@@ -146,7 +149,19 @@ Found IntelliJ IDEA Version 2026.1.2
 download.jetbrains.com/idea/idea-2026.1.2.exe
 1.08 GB OK...Successfully installed
 
+### 2026-06-04
 winget upgrade
 Name            Id              Version Available Source
 --------------------------------------------------------
 Python Launcher Python.Launcher 3.12.10 3.13.5    winget
+
+
+
+$ grep -i Defender $LOCALAPPDATA/JetBrains/IntelliJIdea2026.1/log/idea.log
+2026-06-04 12:53:09,618 [ 591518]   INFO - #c.i.d.WindowsDefenderChecker - paths=[C:\e\p24core, C:\Users\mz\.gradle, C:\Users\mz\AppData\Local\JetBrains\IntelliJIdea2026.1] project=C:\e\p24core; called from:
+  com.intellij.diagnostic.WindowsDefenderChecker.doExcludeProjectPaths(WindowsDefenderChecker.java:320)
+  com.intellij.diagnostic.WindowsDefenderChecker.excludeProjectPaths(WindowsDefenderChecker.java:316)
+  com.intellij.diagnostic.WindowsDefenderCheckerActivity$Companion$runAndNotify$1.invokeSuspend(WindowsDefenderCheckerActivity.kt:45)
+2026-06-04 12:54:09,985 [ 651885]   INFO - #c.i.d.WindowsDefenderChecker - exclusion failed:
+[-1, 60067ms] [C:\Program Files\JetBrains\IntelliJ IDEA 2026.1.2\bin\launcher.exe, C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe, -ExecutionPolicy, Bypass, -NoProfile, -NonInteractive, -File, C:\Program Files\JetBrains\IntelliJ IDEA 2026.1.2\bin\defender-exclusions.ps1, C:\e\p24core, C:\Users\mz\.gradle, C:\Users\mz\AppData\Local\JetBrains\IntelliJIdea2026.1]
+2026-06-04 12:54:10,070 [ 651970]   INFO - #c.i.d.WindowsDefenderCheckerActivity - requested from the "trust project" dialog; status=FAILED
